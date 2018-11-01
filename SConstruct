@@ -72,5 +72,6 @@ if env['TOOLCHAIN'] != '':
     env['AR'] = env['TOOLCHAIN'] + '-ar'
 
 Export(['clean_envs'])
-SConscript('SConscript');
+AddOption('--build', default='')
+SConscript('SConscript', variant_dir=GetOption('build'), duplicate=0);
 
